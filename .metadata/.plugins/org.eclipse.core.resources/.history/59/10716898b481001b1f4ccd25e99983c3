@@ -1,0 +1,14 @@
+package EditProfile;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class EditProfile_Error {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

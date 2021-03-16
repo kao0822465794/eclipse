@@ -1,0 +1,14 @@
+package Search;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class searhID_pass {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

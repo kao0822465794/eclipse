@@ -1,0 +1,271 @@
+package All;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+class Regis {
+
+	@Test
+	void TC2001() throws InterruptedException {
+		 WebDriver driver = null;
+	        String browser = "chrome";
+
+	        if(browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", "C:\\Users\\koraw\\Desktop\\chromedriver.exe");
+	            driver = new ChromeDriver();
+	        }
+
+	        driver.get("http://localhost/projectalumni/index.php/alumni/register");
+	        driver.manage().window().setSize(new Dimension(1552, 840));
+	        driver.findElement(By.name("u_std")).click();
+	        driver.findElement(By.name("u_std")).sendKeys("614789");
+	        driver.findElement(By.name("u_gen")).click();
+	        driver.findElement(By.name("u_gen")).sendKeys("61/100");
+	        driver.findElement(By.name("u_year")).click();
+	        driver.findElement(By.name("u_year")).sendKeys("2555");
+	        driver.findElement(By.name("u_major")).click();
+	        driver.findElement(By.name("u_major")).sendKeys("se");
+	        driver.findElement(By.name("u_faculty")).click();
+	        {
+	          WebElement dropdown = driver.findElement(By.name("u_faculty"));
+	          dropdown.findElement(By.xpath("//option[. = 'คณะวิทยาศาสตร์และเทคโนโลยี']")).click();
+	        }
+	        driver.findElement(By.name("u_faculty")).click();
+	        driver.findElement(By.name("u_tname")).click();
+	        {
+	          WebElement dropdown = driver.findElement(By.name("u_tname"));
+	          dropdown.findElement(By.xpath("//option[. = 'นาย']")).click();
+	        }
+	        driver.findElement(By.name("u_tname")).click();
+	        driver.findElement(By.name("u_fname")).click();
+	        driver.findElement(By.name("u_fname")).sendKeys("bee");
+	        driver.findElement(By.name("u_lname")).click();
+	        driver.findElement(By.name("u_lname")).sendKeys("soda");
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).clickAndHold().perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).release().perform();
+	        }
+	        driver.findElement(By.cssSelector("body")).click();
+	        driver.findElement(By.name("u_email")).sendKeys("beer@hotmail.com");
+	        driver.findElement(By.id("u_pass")).sendKeys("12345678");
+	        driver.findElement(By.cssSelector("body")).click();
+	        driver.findElement(By.id("u_rpass")).click();
+	        driver.findElement(By.id("u_rpass")).sendKeys("12345678");
+	        driver.findElement(By.name("u_fb")).click();
+	        driver.findElement(By.name("u_fb")).sendKeys("beer");
+	        driver.findElement(By.name("a_h_number")).click();
+	        driver.findElement(By.name("a_h_number")).sendKeys("32");
+	        driver.findElement(By.name("a_home")).click();
+	        driver.findElement(By.name("a_home")).sendKeys("7");
+	        driver.findElement(By.name("a_road")).click();
+	        driver.findElement(By.name("a_road")).sendKeys("few");
+	        driver.findElement(By.cssSelector(".row:nth-child(5) .form-group:nth-child(4)")).click();
+	        driver.findElement(By.name("a_zone")).click();
+	        driver.findElement(By.name("a_zone")).sendKeys("wef");
+	        driver.findElement(By.name("a_district")).click();
+	        driver.findElement(By.name("a_district")).sendKeys("fwe");
+	        driver.findElement(By.name("a_province")).click();
+	        driver.findElement(By.name("a_province")).sendKeys("ตราด");
+	        driver.findElement(By.name("a_code")).click();
+	        driver.findElement(By.name("a_code")).sendKeys("78945");
+	        driver.findElement(By.name("a_h_phone")).click();
+	        driver.findElement(By.name("a_h_phone")).sendKeys("0891231153");
+	        driver.findElement(By.name("a_phone")).click();
+	        driver.findElement(By.name("a_phone")).sendKeys("0870038483");
+	        driver.findElement(By.cssSelector(".custom-control:nth-child(3) > .custom-control-label")).click();
+	        driver.findElement(By.name("sub")).click();
+	        String result1 = driver.findElement(By.id("title")).getText();
+	        Thread.sleep(2000);
+	        assertEquals("Log in",result1);
+	        driver.close();
+	}
+	
+	@Test
+	void TC2002() throws InterruptedException {
+		 WebDriver driver = null;
+	        String browser = "chrome";
+
+	        if(browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", "C:\\Users\\koraw\\Desktop\\chromedriver.exe");
+	            driver = new ChromeDriver();
+	        }
+
+	        driver.get("http://localhost/projectalumni/index.php/alumni/register");
+	        driver.manage().window().setSize(new Dimension(1552, 840));
+	        driver.findElement(By.name("u_std")).click();
+	        driver.findElement(By.name("u_std")).sendKeys("614789");
+	        driver.findElement(By.name("u_gen")).click();
+	        driver.findElement(By.name("u_gen")).sendKeys("61/100");
+	        driver.findElement(By.name("u_year")).click();
+	        driver.findElement(By.name("u_year")).sendKeys("2555");
+	        driver.findElement(By.name("u_major")).click();
+	        driver.findElement(By.name("u_major")).sendKeys("se");
+	        driver.findElement(By.name("u_faculty")).click();
+	        {
+	          WebElement dropdown = driver.findElement(By.name("u_faculty"));
+	          dropdown.findElement(By.xpath("//option[. = 'คณะวิทยาศาสตร์และเทคโนโลยี']")).click();
+	        }
+	        driver.findElement(By.name("u_faculty")).click();
+	        driver.findElement(By.name("u_tname")).click();
+	        {
+	          WebElement dropdown = driver.findElement(By.name("u_tname"));
+	          dropdown.findElement(By.xpath("//option[. = 'นาย']")).click();
+	        }
+	        driver.findElement(By.name("u_tname")).click();
+	        driver.findElement(By.name("u_fname")).click();
+	        driver.findElement(By.name("u_fname")).sendKeys("bee");
+	        driver.findElement(By.name("u_lname")).click();
+	        driver.findElement(By.name("u_lname")).sendKeys("soda");
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).clickAndHold().perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).release().perform();
+	        }
+	        driver.findElement(By.cssSelector("body")).click();
+	        driver.findElement(By.name("u_email")).sendKeys("Kao@hotmail.com");
+	        
+	        driver.findElement(By.cssSelector("body")).click();
+	        driver.findElement(By.id("u_rpass")).click();
+	        driver.findElement(By.id("u_rpass")).sendKeys("12345678");
+	        driver.findElement(By.name("u_fb")).click();
+	        driver.findElement(By.name("u_fb")).sendKeys("beer");
+	        driver.findElement(By.name("a_h_number")).click();
+	        driver.findElement(By.name("a_h_number")).sendKeys("32");
+	        driver.findElement(By.name("a_home")).click();
+	        driver.findElement(By.name("a_home")).sendKeys("7");
+	        driver.findElement(By.name("a_road")).click();
+	        driver.findElement(By.name("a_road")).sendKeys("few");
+	        driver.findElement(By.cssSelector(".row:nth-child(5) .form-group:nth-child(4)")).click();
+	        driver.findElement(By.name("a_zone")).click();
+	        driver.findElement(By.name("a_zone")).sendKeys("wef");
+	        driver.findElement(By.name("a_district")).click();
+	        driver.findElement(By.name("a_district")).sendKeys("fwe");
+	        driver.findElement(By.name("a_province")).click();
+	        driver.findElement(By.name("a_province")).sendKeys("ตราด");
+	        driver.findElement(By.name("a_code")).click();
+	        driver.findElement(By.name("a_code")).sendKeys("78945");
+	        driver.findElement(By.name("a_h_phone")).click();
+	        driver.findElement(By.name("a_h_phone")).sendKeys("0891231153");
+	        driver.findElement(By.name("a_phone")).click();
+	        driver.findElement(By.name("a_phone")).sendKeys("0870038483");
+	        driver.findElement(By.cssSelector(".custom-control:nth-child(3) > .custom-control-label")).click();
+	        driver.findElement(By.name("sub")).click();
+	        //String result1 = driver.findElement(By.id("title")).getText();
+	        Thread.sleep(2000);
+	        //assertEquals("Log in",result1);
+	        driver.close();
+	}
+	@Test
+	void TC2003() throws InterruptedException {
+		 WebDriver driver = null;
+	        String browser = "chrome";
+
+	        if(browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", "C:\\Users\\koraw\\Desktop\\chromedriver.exe");
+	            driver = new ChromeDriver();
+	        }
+
+	        driver.get("http://localhost/projectalumni/index.php/alumni/register");
+	        driver.manage().window().setSize(new Dimension(1552, 840));
+	        driver.findElement(By.name("u_std")).click();
+	        driver.findElement(By.name("u_std")).sendKeys("614789");
+	        driver.findElement(By.name("u_gen")).click();
+	        driver.findElement(By.name("u_gen")).sendKeys("61/100");
+	        driver.findElement(By.name("u_year")).click();
+	        driver.findElement(By.name("u_year")).sendKeys("2555");
+	        driver.findElement(By.name("u_major")).click();
+	        driver.findElement(By.name("u_major")).sendKeys("se");
+	        driver.findElement(By.name("u_faculty")).click();
+	        {
+	          WebElement dropdown = driver.findElement(By.name("u_faculty"));
+	          dropdown.findElement(By.xpath("//option[. = 'คณะวิทยาศาสตร์และเทคโนโลยี']")).click();
+	        }
+	        driver.findElement(By.name("u_faculty")).click();
+	        driver.findElement(By.name("u_tname")).click();
+	        {
+	          WebElement dropdown = driver.findElement(By.name("u_tname"));
+	          dropdown.findElement(By.xpath("//option[. = 'นาย']")).click();
+	        }
+	        driver.findElement(By.name("u_tname")).click();
+	        driver.findElement(By.name("u_fname")).click();
+	        driver.findElement(By.name("u_fname")).sendKeys("Kao");
+	        driver.findElement(By.name("u_lname")).click();
+	        driver.findElement(By.name("u_lname")).sendKeys("Kuu");
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).clickAndHold().perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector("body"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).release().perform();
+	        }
+	        driver.findElement(By.cssSelector("body")).click();
+	        driver.findElement(By.name("u_email")).sendKeys("614259001@hotmail.com");
+	        driver.findElement(By.id("u_pass")).sendKeys("12345678");
+	        driver.findElement(By.cssSelector("body")).click();
+	        driver.findElement(By.id("u_rpass")).click();
+	        driver.findElement(By.id("u_rpass")).sendKeys("12345678");
+	        driver.findElement(By.name("u_fb")).click();
+	        driver.findElement(By.name("u_fb")).sendKeys("Kao");
+	        driver.findElement(By.name("a_h_number")).click();
+	        driver.findElement(By.name("a_h_number")).sendKeys("32");
+	        driver.findElement(By.name("a_home")).click();
+	        driver.findElement(By.name("a_home")).sendKeys("7");
+	        driver.findElement(By.name("a_road")).click();
+	        driver.findElement(By.name("a_road")).sendKeys("few");
+	        driver.findElement(By.cssSelector(".row:nth-child(5) .form-group:nth-child(4)")).click();
+	        driver.findElement(By.name("a_zone")).click();
+	        driver.findElement(By.name("a_zone")).sendKeys("wef");
+	        driver.findElement(By.name("a_district")).click();
+	        driver.findElement(By.name("a_district")).sendKeys("fwe");
+	        driver.findElement(By.name("a_province")).click();
+	        driver.findElement(By.name("a_province")).sendKeys("ตราด");
+	        driver.findElement(By.name("a_code")).click();
+	        driver.findElement(By.name("a_code")).sendKeys("78945");
+	        driver.findElement(By.name("a_h_phone")).click();
+	        driver.findElement(By.name("a_h_phone")).sendKeys("0891231153");
+	        driver.findElement(By.name("a_phone")).click();
+	        driver.findElement(By.name("a_phone")).sendKeys("0870038483");
+	        driver.findElement(By.cssSelector(".custom-control:nth-child(3) > .custom-control-label")).click();
+	        driver.findElement(By.name("sub")).click();
+	        String result1 = driver.findElement(By.id("title")).getText();
+	        Thread.sleep(2000);
+	        assertEquals("Log in",result1);
+	        driver.close();
+	}
+}

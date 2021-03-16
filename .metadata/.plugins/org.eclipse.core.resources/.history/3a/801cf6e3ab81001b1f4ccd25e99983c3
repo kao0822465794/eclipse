@@ -1,0 +1,60 @@
+package Search;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+class searhID_pass {
+
+	@Test
+	void TC3003() throws InterruptedException {
+		 WebDriver driver = null;
+	        String browser = "chrome";
+
+	        if(browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", "C:\\Users\\koraw\\Desktop\\chromedriver.exe");
+	            driver = new ChromeDriver();
+	        }
+	        driver.get("http://localhost/projectalumni/index.php/alumni/index");
+	        driver.manage().window().setSize(new Dimension(1042, 554));
+	        driver.findElement(By.linkText("เข้าสู่ระบบ")).click();
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).clickAndHold().perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).release().perform();
+	        }
+	        driver.findElement(By.cssSelector(".container")).click();
+	        driver.findElement(By.id("defaultLoginFormEmail")).sendKeys("614259006@webmail.npru.ac.th");
+	        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys("12345678");
+	        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys(Keys.ENTER);
+	        driver.findElement(By.linkText("Alumni List")).click();
+	        driver.manage().window().setSize(new Dimension(1552, 840));
+	        driver.findElement(By.id("searchalumni")).click();
+	        driver.findElement(By.id("searchalumni")).sendKeys("กรวิช");
+	        driver.findElement(By.id("searchalumni")).sendKeys(Keys.ENTER);
+	        String result = driver.findElement(By.id("id")).getText();
+	        Thread.sleep(4000);
+	        driver.close();
+	        assertEquals("นาย กรวิชญ์ อู่อรุณ",result);
+	       
+		
+	}
+
+}

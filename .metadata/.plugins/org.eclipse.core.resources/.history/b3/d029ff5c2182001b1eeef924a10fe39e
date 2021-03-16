@@ -1,0 +1,122 @@
+package Login;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+class TC1Login {
+
+	@Test //ผ่าน
+	void TC1001() throws InterruptedException {
+		 WebDriver driver = null;
+	        String browser = "chrome";
+
+	        if(browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", "C:\\Users\\koraw\\Desktop\\chromedriver.exe");
+	            driver = new ChromeDriver();
+	        }
+	        driver.get("http://localhost/projectalumni/index.php/alumni/index");
+	        driver.manage().window().setSize(new Dimension(1042, 554));
+	        driver.findElement(By.linkText("เข้าสู่ระบบ")).click();
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).clickAndHold().perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).release().perform();
+	        }
+	        driver.findElement(By.cssSelector(".container")).click();
+	        driver.findElement(By.id("defaultLoginFormEmail")).sendKeys("614259006@webmail.npru.ac.th");
+	        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys("12345678");
+	        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys(Keys.ENTER);
+	        String result = driver.findElement(By.id("navbarDropdown")).getText();
+	        Thread.sleep(4000);
+	        driver.close();
+	        assertEquals("ยินดีต้อนรับ คุณ เจษฏากร",result);
+	        
+	}
+	@Test
+	void TC1003() throws InterruptedException {
+		 WebDriver driver = null;
+	        String browser = "chrome";
+
+	        if(browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", "C:\\Users\\koraw\\Desktop\\chromedriver.exe");
+	            driver = new ChromeDriver();
+	        }
+	        driver.get("http://localhost/projectalumni/index.php/alumni/index");
+	        driver.manage().window().setSize(new Dimension(1042, 554));
+	        driver.findElement(By.linkText("เข้าสู่ระบบ")).click();
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).clickAndHold().perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).release().perform();
+	        }
+	        driver.findElement(By.cssSelector(".container")).click();
+	        driver.findElement(By.id("defaultLoginFormEmail")).sendKeys("614259047@webmail.npru.ac.th");
+	        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys("12345678");
+	        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys(Keys.ENTER);
+	        String result = driver.findElement(By.id("navbarDropdown")).getText();
+	        Thread.sleep(4000);
+	        driver.close();
+	        assertEquals("ยินดีต้อนรับ คุณ ศรัณย์สุข",result);
+	}
+	@Test
+	void TC1002() throws InterruptedException {
+		 WebDriver driver = null;
+	        String browser = "chrome";
+
+	        if(browser.equalsIgnoreCase("chrome")) {
+	            System.setProperty("webdriver.chrome.driver", "C:\\Users\\koraw\\Desktop\\chromedriver.exe");
+	            driver = new ChromeDriver();
+	        }
+	        driver.get("http://localhost/projectalumni/index.php/alumni/index");
+	        driver.manage().window().setSize(new Dimension(1042, 554));
+	        driver.findElement(By.linkText("เข้าสู่ระบบ")).click();
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).clickAndHold().perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).perform();
+	        }
+	        {
+	          WebElement element = driver.findElement(By.cssSelector(".container"));
+	          Actions builder = new Actions(driver);
+	          builder.moveToElement(element).release().perform();
+	        }
+	        driver.findElement(By.cssSelector(".container")).click();
+	        driver.findElement(By.id("defaultLoginFormEmail")).sendKeys("614259006@webmail.npru.ac.th");
+	        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys("87654321");
+	        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys(Keys.ENTER);
+	       
+	}
+
+}

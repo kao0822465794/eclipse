@@ -1,0 +1,44 @@
+package ViewProfile;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+class ViewProfile {
+
+	@Test
+	void TC4001() throws InterruptedException {
+		WebDriver driver = null;
+        String browser = "chrome";
+
+        if(browser.equalsIgnoreCase("chrome")) {
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\koraw\\Desktop\\chromedriver.exe");
+            driver = new ChromeDriver();
+        }
+        driver.get("http://localhost/projectalumni/index.php/alumni/login");
+        driver.manage().window().setSize(new Dimension(1296, 824));
+        driver.findElement(By.id("defaultLoginFormEmail")).click();
+        driver.findElement(By.id("defaultLoginFormEmail")).sendKeys("614259021@webmail.npru.ac.th");
+        driver.findElement(By.id("defaultLoginFormPassword")).click();
+        {
+          WebElement element = driver.findElement(By.name("but"));
+          Actions builder = new Actions(driver);
+          builder.moveToElement(element).perform();
+        }
+        driver.findElement(By.id("defaultLoginFormPassword")).sendKeys("12345678");
+        driver.findElement(By.name("but")).click();
+        driver.findElement(By.id("navbarDropdown")).click();
+        driver.findElement(By.linkText("ข้อมูลส่วนตัว")).click();
+        String result = driver.findElement(By.id("P_ID")).getText();
+        Thread.sleep(4000);
+        driver.close();
+        assertEquals("614259021",result);
+	}
+
+}
